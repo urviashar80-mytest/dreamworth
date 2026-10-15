@@ -1,0 +1,87 @@
+/* ==========================================================================
+   About page. Uses the wide gutter (body.is-wide). 4pt grid throughout.
+   ========================================================================== */
+
+/* ---------- 01 Hero ---------- */
+.ab-hero { background: var(--blue); color: var(--white); overflow: hidden; }
+.ab-hero__in { display: flex; flex-direction: column; gap: round(clamp(36px, 4.4vw, 64px), 4px); padding-top: round(clamp(32px, 4vw, 56px), 4px); padding-bottom: round(clamp(80px, 9vw, 140px), 4px); }
+.ab-hero .crumbs { color: var(--blue-light); }
+.ab-hero .crumbs a:hover { color: var(--white); }
+.ab-hero .crumbs [aria-current] { color: var(--white); }
+.ab-hero__title { --fs: clamp(96px, 17vw, 280px); --lh: 1.04; font-weight: var(--w-display); letter-spacing: -0.022em; }
+.ab-hero__lead { --fs: clamp(36px, 5vw, 80px); --lh: 1.1; font-weight: var(--w-display); letter-spacing: -0.012em; max-width: round(16em, 4px); text-wrap: pretty; }
+
+/* ---------- 02 Words band ---------- */
+.ab-words { overflow: hidden; padding: round(clamp(72px, 8vw, 120px), 4px) 0; display: flex; flex-direction: column; }
+.ab-words__row { overflow: hidden; }
+.ab-words__row--r { text-align: right; }
+.ab-words__w { display: inline-block; white-space: nowrap; --fs: clamp(88px, 17vw, 288px); --lh: 1.04; font-weight: var(--w-display); letter-spacing: -0.024em; }
+.ab-words__row--l .ab-words__w { padding-left: var(--gutter); }
+.ab-words__row--r .ab-words__w { padding-right: var(--gutter); color: var(--blue); }
+
+/* ---------- 04 Manifesto ---------- */
+.ab-manifesto__in { padding-top: var(--sec-y-lg); padding-bottom: var(--sec-y-lg); }
+.ab-manifesto__p { --fs: clamp(32px, 4vw, 64px); --lh: 1.16; font-weight: var(--w-display); letter-spacing: -0.012em; max-width: round(20em, 4px); text-wrap: pretty; }
+
+/* ---------- 05 Photo band ---------- */
+.ab-photo { position: relative; overflow: hidden; background: var(--navy); color: var(--white); height: round(clamp(520px, 58vw, 860px), 4px); }
+.ab-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 60%; }
+.ab-photo__shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 27, 63, 0) 40%, rgba(11, 27, 63, 0.75) 100%); }
+.ab-photo__since { position: absolute; left: 0; right: 0; bottom: round(clamp(20px, 3vw, 48px), 4px); overflow: hidden; }
+.ab-photo__since > span { display: block; white-space: nowrap; padding-left: var(--gutter); --fs: clamp(80px, 15vw, 248px); --lh: 1.04; font-weight: var(--w-display); letter-spacing: -0.022em; }
+
+/* ---------- 06 Numbers ---------- */
+.ab-nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 48px var(--gap-grid); padding-top: var(--sec-y-lg); padding-bottom: var(--sec-y-lg); list-style: none; margin: 0 auto; }
+.ab-num { display: flex; flex-direction: column; gap: 12px; }
+.ab-num__v { --fs: clamp(64px, 8vw, 132px); --lh: 1.04; font-weight: var(--w-display); letter-spacing: -0.02em; color: var(--blue); }
+.ab-num__l { font-size: 16px; line-height: 24px; font-weight: 600; color: var(--slate-600); }
+
+/* ---------- Rails (team + quotes) ---------- */
+.rail-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; padding-top: var(--sec-y-lg); }
+.rail-head .btn-row { gap: 12px; }
+.rail {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+  padding-right: var(--gutter); padding-bottom: var(--sec-y-lg); padding-left: var(--edge); scroll-padding-left: var(--edge);
+  list-style: none; margin: 0;
+}
+.rail::-webkit-scrollbar { display: none; }
+
+/* ---------- 07 Team ---------- */
+.ab-team { background: var(--sand); overflow: hidden; }
+.ab-team .rail { gap: round(clamp(16px, 2vw, 24px), 4px); padding-top: round(clamp(40px, 4vw, 56px), 4px); }
+.member { flex: none; width: round(clamp(240px, 24vw, 340px), 4px); scroll-snap-align: start; display: flex; flex-direction: column; gap: 16px; }
+.member__photo {
+  position: relative; aspect-ratio: 3 / 4; border-radius: 24px; overflow: hidden; background: var(--ice-2);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; text-align: center;
+  transition: transform .6s var(--ease);
+}
+.member:hover .member__photo { transform: translateY(-8px); }
+.member__photo svg { width: 48px; height: 48px; color: var(--slate-300); }
+.member__photo small { font-size: 12px; line-height: 16px; font-weight: 600; color: var(--slate-400); }
+.member__name { --fs: clamp(20px, 1.7vw, 24px); --lh: 1.2; font-weight: var(--w-display); }
+.member__role { font-size: 16px; line-height: 24px; color: var(--slate-600); }
+.member__text { display: flex; flex-direction: column; gap: 4px; }
+
+/* ---------- Two-tone uppercase headline ---------- */
+.caps { --fs: clamp(52px, 8.2vw, 140px); --lh: 1.04; letter-spacing: -0.02em; text-transform: uppercase; text-wrap: balance; }
+.caps > span { display: block; }
+.caps > span:first-child { font-weight: var(--w-display); color: var(--navy); }
+.caps > span + span { font-weight: 400; color: var(--slate-400); }
+
+/* ---------- 08 Work culture ---------- */
+.ab-culture__in { display: flex; flex-direction: column; gap: round(clamp(40px, 5vw, 72px), 4px); padding-top: var(--sec-y-lg); padding-bottom: var(--sec-y-lg); }
+.ab-culture__p { padding-right: round(clamp(0px, 8vw, 160px), 4px); --fs: clamp(32px, 4.2vw, 68px); --lh: 1.24; font-weight: 500; letter-spacing: -0.012em; text-wrap: pretty; }
+.ab-culture__p strong { font-weight: var(--w-display); }
+
+/* ---------- 09 Values and voices ---------- */
+.ab-voices { background: var(--sand); overflow: hidden; }
+.ab-voices .rail { gap: round(clamp(40px, 6vw, 120px), 4px); padding-top: round(clamp(56px, 6vw, 96px), 4px); }
+.voice { flex: none; width: round(clamp(300px, 40vw, 560px), 4px); scroll-snap-align: start; display: flex; flex-direction: column; gap: round(clamp(40px, 5vw, 72px), 4px); }
+.voice__label { font-size: 16px; line-height: 24px; font-weight: var(--w-display); color: var(--blue); }
+.voice blockquote { --fs: clamp(24px, 2.6vw, 40px); --lh: 1.24; font-weight: 400; letter-spacing: -0.008em; text-wrap: pretty; }
+.voice figcaption { display: flex; flex-direction: column; gap: 4px; margin-top: auto; }
+.voice figcaption b { font-size: 16px; line-height: 24px; font-weight: var(--w-display); }
+.voice figcaption span { font-size: 16px; line-height: 24px; color: var(--slate-600); }
+
+/* ---------- Recognition ---------- */
+.ab-recog .wrap { padding-top: var(--sec-y-lg); padding-bottom: var(--sec-y-lg); }
