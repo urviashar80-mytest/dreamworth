@@ -11,11 +11,9 @@ A static, dependency-free build of the four pages in `Dreamworth_Website_Directi
 
 ## Run it
 
-```
-npx serve prototype
-```
+Unzip or check out the folder and double-click `index.html`. No server or install is needed; the other three pages link from the menu and footer.
 
-Then open the URL it prints. Any static server works. Opening the files directly from disk also mostly works, but a server is safer for fonts and video.
+To serve it instead, run `npx serve prototype` and open the URL it prints.
 
 ## Structure
 
